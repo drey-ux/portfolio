@@ -7,8 +7,10 @@
   /*===== Colores =====*/
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
   /* HSL color mode */
+  --bg-color: white;
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
+  --footer-color: hsl(var(--hue-color), 56%, 12%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
@@ -24,6 +26,12 @@
   /*===== z index =====*/
   --z-back: -10;
   --z-fixed: 100;
+}
+
+.dark-mode{
+  --bg-color: black;
+  --second-color: white;
+  --footer-color: black;
 }
 
 @media screen and (min-width: 968px) {
@@ -49,6 +57,8 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+  background-color: var(--bg-color);
+  transition: background-color 2s;
 }
 
 h1, h2, p {
@@ -112,7 +122,8 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
+  background-color: var(--bg-color);
+  transition: background-color 2s;
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
@@ -123,6 +134,7 @@ img {
   justify-content: space-between;
   align-items: center;
   font-weight: var(--font-semi);
+  /* background-color: var(--bg-color); */
 }
 
 @media screen and (max-width: 767px) {
@@ -144,7 +156,8 @@ img {
 
 .nav__link {
   position: relative;
-  color: #fff;
+  color: var(--bg-color);
+  transition: color 2s;
 }
 
 .nav__link:hover {
@@ -163,12 +176,14 @@ img {
 
 .nav__logo {
   color: var(--second-color);
+  transition: color 2s;
 }
 
 .nav__toggle {
   color: var(--second-color);
   font-size: 1.5rem;
   cursor: pointer;
+  transition: color 2s;
 }
 
 /*Active menu*/
@@ -201,6 +216,8 @@ img {
 .home__title {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
+  color: var(--second-color);
+  transition: color 2s;
 }
 
 .home__title-color {
@@ -217,10 +234,12 @@ img {
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
   color: var(--second-color);
+  transition: color 2s;
 }
 
 .home__social-icon:hover {
   color: var(--first-color);
+  transition: color 2s;
 }
 
 .home__img {
@@ -381,7 +400,7 @@ img {
 
 /* ===== FOOTER =====*/
 .footer {
-  background-color: var(--second-color);
+  background-color: var(--footer-color);
   color: #fff;
   text-align: center;
   font-weight: var(--font-semi);

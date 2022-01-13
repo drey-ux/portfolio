@@ -41,6 +41,11 @@ function scrollActive(){
 }
 window.addEventListener('scroll', scrollActive)
 
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+    }
+
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'top',
